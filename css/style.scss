@@ -1,0 +1,48 @@
+$personColor: rgb(37, 33, 33);
+$obstColor: rgb(94, 44, 141);
+$floorColor:rgb(134, 255, 13);
+
+@mixin tamanho($width){
+    width: $width;
+    height: 50px;
+}
+@mixin displayFlex{
+    display: flex;
+    align-items: end;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    @include displayFlex();
+    justify-content: center;
+    background: linear-gradient(to bottom, #f93d59, #66c3e3);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+article{
+    @include displayFlex();
+    gap: 50%;
+}
+#person{
+    @include tamanho(50px);
+    background-color:$personColor;
+}
+#obstacle{
+    @include tamanho(50px);
+    position: absolute;
+    top: 87%;
+    left: 90%;
+    background-color: $obstColor;
+    transition: transform 1s ease-in-out;
+}
+#floor{
+    @include tamanho(100vw);
+    background-color:$floorColor;
+}
+button{
+    display: flex;
+    position: relative;
+}
